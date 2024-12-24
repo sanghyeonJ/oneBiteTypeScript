@@ -5,10 +5,11 @@
 // value => number : toFixed
 // value => string : toUpperCase
 function func(value: number | string){
-    
+
     if(typeof value === 'number'){
         console.log(value.toFixed());
     }else if(typeof value === 'string'){
         console.log(value.toUpperCase());
     }
 }
+console.log('test')
