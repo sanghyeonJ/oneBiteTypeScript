@@ -26,7 +26,7 @@ type countryNumberCodes = {
     [key: string]: number;
 }
 let countryNumberCodes: countryNumberCodes = {
-    korea: 'ko',
+    korea: 480,
     UnitedState: 840,
     UnitedKingdom: 826
 }
