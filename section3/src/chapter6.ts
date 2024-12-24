@@ -12,4 +12,3 @@ function func(value: number | string){
         console.log(value.toUpperCase());
     }
 }
-console.log('test')
