@@ -2,13 +2,27 @@
 // 조건문 등을 이용해 넓은 타입에서 좁은 타입으로
 // 타입을 상황에 따라 좁히는 방법
 
+type Person = {
+    name: string;
+    age: number;
+}
+
 // value => number : toFixed
 // value => string : toUpperCase
-function func(value: number | string){
-
+// value => Date : getTime
+// value => Person : name은 age살 입니다.
+function func(value: number | string | Date | null | Person){
+    // value.toUpperCase();
+    // value.toFixed();
     if(typeof value === 'number'){
+        // 조건 내부에서 value의 타입은 union보다 더 좁은 타입인 number타입으로 보장
         console.log(value.toFixed());
     }else if(typeof value === 'string'){
+        // string 타입으로 보장
         console.log(value.toUpperCase());
+    }else if(value instanceof Date){
+        console.log(value.getTime());
+    }else if('age' in value){
+        console.log(`${value.name}은 ${value.age}살 입니다.`)
     }
 }
